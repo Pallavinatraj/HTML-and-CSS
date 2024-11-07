@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+</head>
+<body>
+    <h1>Mini Calculator</h1>
+    <input id="first" type="number" placeholder="Enter 1st Number" value="">
+    <input id="scnd" type="number" placeholder="Enter 2nd Number" value="">
+    <button>Add</button>
+    <button>Subtract</button>
+    <button onClick="multiplication()">Multiply</button>
+    <button onClick="division()">Divide</button>
+</body>
+</html>
+
+<script>
+    function multiplication(){
+       let multy = document.getElementById("first").value * document.getElementById("scnd").value;
+       alert("Multiplication of Two Numbers is"+multy);
+    }
+
+    function division(){
+       let multy = document.getElementById("first").value / document.getElementById("scnd").value;
+       alert("Division of Two Numbers is"+"multy");
+    }
+</script>
