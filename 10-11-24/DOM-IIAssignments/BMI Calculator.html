@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+    <h1>Check Your BMI</h1>
+    <p>Enter your weight and height below to check your BMI results</p>
+    <p>Put Your Weight in here (KG)</p>
+    <input id="weight" type="number" placeholder="Enter your weight in kg">
+    <p>Put Your Height in here (m)</p>
+    <input id="height" type="number" placeholder="Enter your height in m">
+    <button>Calculate BMI</button>
+    <div id="bmi-result"></div>
+
+    <script>
+        document.querySelector("button").addEventListener("click", calculateBMI);
+
+        function calculateBMI() {
+            let weight = document.querySelector("#weight").value;
+            let height = document.querySelector("#height").value;
+
+
+            weight = parseFloat(weight);
+            height = parseFloat(height);
+
+
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                document.querySelector("#bmi-result").innerHTML = "Please enter valid weight and height values.";
+                return;
+            }
+
+
+            let bmi = weight / (height * height);
+
+
+            let resultDiv = document.querySelector("#bmi-result");
+            resultDiv.innerHTML = "";
+
+
+            if (bmi <= 18.4) {
+                resultDiv.innerHTML = `Your BMI is ${bmi.toFixed(1)}, which means you are Underweight.`;
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                resultDiv.innerHTML = `Your BMI is ${bmi.toFixed(1)}, which means you are Normal weight.`;
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                resultDiv.innerHTML = `Your BMI is ${bmi.toFixed(1)}, which means you are Overweight.`;
+            } else if (bmi >= 30) {
+                resultDiv.innerHTML = `Your BMI is ${bmi.toFixed(1)}, which means you are Obese.`;
+            }
+        }
+    </script>
+</body>
+
+</html>

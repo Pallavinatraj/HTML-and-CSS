@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buttons</title>
+    <style>
+        #box{
+            display:grid;
+            grid-template-columns: repeat(9, 100px);
+            gap:10px 1px; 
+            text-align: center;
+            justify-content: center;  
+            align-items: center;   
+            display: flex;  
+            flex-wrap: wrap; 
+        } 
+
+        #box>div{
+            border-radius: 5px;
+            border:1px solid transparent;
+            border: 1px solid antiquewhite;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            height:60px;
+            width:78px;
+            margin: auto;
+            display:grid;
+            justify-content: center;  
+            align-items: center;
+        }
+        
+        #box>div:first-child{
+            background-color: aqua;
+            color:white;
+        }
+        #box>div:nth-child(2){
+            background-color:grey;
+            color:white;
+        }
+
+        #box>div:nth-child(4){
+            background-color: palevioletred;
+            color:white;
+        }
+        #box>div:nth-child(5){
+            background-color: yellow;
+            color:black;
+        }
+        #box>div:nth-child(6){
+            background-color: skyblue;
+            color:white;
+        }
+        #box>div:nth-child(7){
+            background-color: white;
+            color:black;
+        }
+        #box>div:nth-child(8){
+            background-color: rgb(77, 75, 75);
+            color:white;
+        }
+        #box>div:last-child{
+            border:0px;
+            
+            color:blue;
+        }
+        #box>div:nth-child(3){
+            background-color: green;
+            color:white;
+        }    
+      
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div>Primary</div>
+        <div>Secondary</div>
+        <div>Success</div>
+        <div>Danger</div>
+        <div>Warning</div>
+        <div>Info</div>
+        <div>Light</div>
+        <div>Dark</div>
+        <div>Link</div>
+    </div>
+</body>
+</html>
