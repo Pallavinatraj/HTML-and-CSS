@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form submit</title>
+</head>
+<body>
+    <form id="formss">
+        <input id="names" type="text" placeholder="Enter your name">
+        <input id="ages" type="number" placeholder="Enter your age">
+        <select id="genders">
+            <option value="gender">Select your Gender</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+        <input id="emails" type="email" placeholder="email">
+        <input id="numbs" type="text" placeholder="Mobile number">
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+
+<script>
+    let arrayValue=[];
+    let x= document.querySelector("#formss").addEventListener("submit", Myfunction);
+
+    function Myfunction(event){
+        event.preventDefault();
+        let name=document.querySelector("#names").value;
+        let age=document.querySelector("#ages").value;
+        let gender=document.querySelector("#genders").value;
+        let email=document.querySelector("#emails").value;
+        let number=document.querySelector("#numbs").value;  
+
+        let formData= {
+            name:name,
+            age:age,
+            gender:gender,
+            email:email,
+            number:number
+        }
+
+        arrayValue.push(formData);
+        console.log(arrayValue);
+
+    }
+
+</script>
