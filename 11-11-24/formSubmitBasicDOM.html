@@ -1,10 +1,21 @@
+<!-- Create a form with 5 input boxes having following fields
+Name
+Age
+Gender (select tag)
+Email
+Mobile Number
+On form submit display all data in form of array of objects in browser console -->
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form submit</title>
 </head>
+
 <body>
     <form id="formss">
         <input id="names" type="text" placeholder="Enter your name">
@@ -19,27 +30,28 @@
         <input type="submit">
     </form>
 </body>
+
 </html>
 
 
-<script>
-    let arrayValue=[];
-    let x= document.querySelector("#formss").addEventListener("submit", Myfunction);
+<script src="formSubmitBasicDOM.html">
+    let arrayValue = [];
+    let x = document.querySelector("#formss").addEventListener("submit", Myfunction);
 
-    function Myfunction(event){
+    function Myfunction(event) {
         event.preventDefault();
-        let name=document.querySelector("#names").value;
-        let age=document.querySelector("#ages").value;
-        let gender=document.querySelector("#genders").value;
-        let email=document.querySelector("#emails").value;
-        let number=document.querySelector("#numbs").value;  
+        let name = document.querySelector("#names").value;
+        let age = document.querySelector("#ages").value;
+        let gender = document.querySelector("#genders").value;
+        let email = document.querySelector("#emails").value;
+        let number = document.querySelector("#numbs").value;
 
-        let formData= {
-            name:name,
-            age:age,
-            gender:gender,
-            email:email,
-            number:number
+        let formData = {
+            name: name,
+            age: age,
+            gender: gender,
+            email: email,
+            number: number
         }
 
         arrayValue.push(formData);
