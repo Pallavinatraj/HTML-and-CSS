@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+
+<body>
+    <h1></h1>
+    <button>Increase</button>
+    <button>Decrease</button>
+</body>
+
+</html>
+
+<script>
+
+    document.querySelector("h1").innerText = 0;
+    let counter = 0;
+    document.querySelector("h1+button").addEventListener("click", clickedMe)
+    function clickedMe() {
+        counter++;
+        document.querySelector("h1").innerText = counter;
+        localStorage.setItem("counter", "counter")
+    }
+
+    document.querySelector("button+button").addEventListener("click", clickedNotMe)
+    function clickedNotMe() {
+        counter--;
+        document.querySelector("h1").innerText = counter;
+        localStorage.setItem("counter", "counter")
+    }
+
+    // let values = localStorage.getItem(counter);
+    // document.querySelector("h1").innerText = values;
+
+
+</script>
