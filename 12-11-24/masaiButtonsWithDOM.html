@@ -5,18 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MasaiButton with DOM</title>
+    <style>
+        button {
+            margin-right: 8px;
+            border-radius: 5px;
+            height: 40px;
+            width: 90px
+        }
+    </style>
 </head>
 
 <body>
-
 </body>
 
 </html>
 
 <script>
 
-    let btn = document.createElement("button");
-    btn.innerText = "Primary";
-    document.querySelector("body").append("btn");
+    var btnArr = [
+        { name: "Primary", color: "white", bgColor: "blue" },
+        { name: "Secondary", color: "white", bgColor: "grey" },
+        { name: "Danger", color: "white", bgColor: "red" },
+        { name: "Warning", color: "black", bgColor: "yellow" },
+        { name: "Info", color: "white", bgColor: "cyan" },
+        { name: "Light", color: "black", bgColor: "white" },
+        { name: "Success", color: "white", bgColor: "green" },
+        { name: "Dark", color: "white", bgColor: "black" },
+        { name: "Link", color: "blue", bgColor: "white" },
+        { name: "Dark Pink", color: "blue", bgColor: "pink" },
+    ];
+
+
+    btnArr.forEach(function (elem) {
+        let btn = document.createElement("button");
+        btn.innerText = elem.name
+        document.querySelector("body").append(btn);
+        btn.style.color = elem.color;
+        btn.style.backgroundColor = elem.bgColor;
+    })
 
 </script>
