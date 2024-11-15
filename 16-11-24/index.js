@@ -1,9 +1,9 @@
-// Attach the event listener to the form instead of the button
+
 document.querySelector("form").addEventListener("submit", clickedMe);
 let arrValue = [];
 
 function clickedMe(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
     let obj = {
         title: document.querySelector("#title").value,
