@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form</title>
+</head>
+
+<body>
+    <form>
+        <input id="name" type="name" placeholder="name">
+        <input id="age" type="number" placeholder="Age">
+        <select id="gender">
+            <option value="select">Select</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+        <input id="email" type="email" placeholder="email">
+        <input id="number" type="number" placeholder="Mobile Number">
+        <input type="submit">
+    </form>
+</body>
+
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit", clickMe);
+    let values = document.querySelector("form")
+    let finalArray = [];
+
+    function clickMe() {
+        event.preventDefault();
+        let name = values.name.value
+        let age = values.age.value
+        let gender = values.gender.value
+        let email = values.email.value
+        let number = values.number.value
+
+        let obj = {
+            name: name,
+            age: age,
+            gender: gender,
+            email: email,
+            number: number
+        }
+
+        finalArray.push(obj);
+        console.log(finalArray);
+        localStorage.setItem("Information", JSON.stringify(finalArray));
+
+
+
+    }
+</script>
