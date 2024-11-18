@@ -1,0 +1,6 @@
+#box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, 250px);
+    gap: 10px
+}
