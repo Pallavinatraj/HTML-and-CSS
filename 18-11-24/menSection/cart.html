@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Details</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+
+<script>
+    let data = JSON.parse(localStorage.getItem("item"));
+
+    function CartAddToTable(data) {
+        data.map(function (elem) {
+
+
+            let tr = document.createElement("tr");
+
+            let td1 = document.createElement("td");
+            td1.innerText = elem.name;
+
+            let td2 = document.createElement("td");
+            td2.innerText = elem.price;
+
+            let td3 = document.createElement("td");
+
+
+            tr.append(td1, td2, td3);
+            document.querySelector("tbody").append(tr)
+        });
+
+    }
+
+</script>
