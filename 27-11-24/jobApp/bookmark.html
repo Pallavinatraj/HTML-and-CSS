@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admitted</title>
+  <link rel="stylesheet" href="commonStyles.css" />
+  <style>
+    tbody>tr>td:last-child {
+      font-weight: bold;
+      background: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="links">
+    <div><a href="index.html">Home</a></div>
+    <div><a href="applied.html">Applied Jobs</a></div>
+    <div><a href="bookmark.html">Bookmarks</a></div>
+  </div>
+  <select>
+    <option>Sort By Name</option>
+    <option>Ascending</option>
+    <option>Decendig</option>
+  </select>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Job Applied</th>
+        </tr>
+      </thead>
+      <tbody id="body"></tbody>
+    </table>
+  </main>
+</body>
+<script>
+  let bookmarks = JSON.parse(localStorage.getItem("bookMark"));
+  displayTable(bookmarks);
+
+
+
+  function displayTable() {
+    bookmarks.forEach(function (elem, index) {
+      document.querySelector("tbody").innerHTML = " ";
+      let tr = document.createElement("tr")
+
+      let td1 = document.createElement("td")
+      td1.innerText = elem.name;
+      let td2 = document.createElement("td")
+      td2.innerText = elem.email;
+      let td3 = document.createElement("td")
+      td3.innerText = elem.role;
+
+      let td4 = document.createElement("td")
+      td4.innerText = "Delete";
+      td4.addEventListener("click", function () {
+        deleteFunction(index);
+      })
+
+      tr.append(td1, td2, td3, td4);
+      document.querySelector("#body").append(tr);
+    });
+  }
+
+
+  function deleteFunction(index) {
+    bookmarks.splice(index, 1);
+    localStorage.setItem("bookMark", JSON.stringify(bookmarks));
+    window.location.reload;
+    displayTable(bookmarks);
+  }
+
+
+
+
+</script>
+
+</html>
